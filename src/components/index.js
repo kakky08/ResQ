@@ -1,0 +1,7 @@
+export {default as AnswersList} from './AnswersList'
+export {default as Answer} from './Answer'
+export { default as Chats } from './Chats'
+export { default as Chat } from './Chat'
+export { default as ChatBot } from './ChatBot'
+// export { default as Home } from '../Home'
+export {default as Whiplash} from './Answer/Whiplash'
