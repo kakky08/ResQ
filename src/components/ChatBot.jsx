@@ -4,6 +4,7 @@ import '../assets/styles/style.css';
 import { AnswersList,Chats } from "../components/index";
 import { InsertInvitation } from '@material-ui/icons';
 import FormDialog from '../components/Forms/FormDialog';
+import Menu1 from './components/Menu1';
 import Whiplash from './Answer/Whiplash';
 import { useHistory } from "react-router-dom";
 
@@ -16,7 +17,7 @@ export default class App extends React.Component {
       chats: [],
       currentId: "init",
       dataset: defaultDataset,
-      open: false,
+      open: true,
       answer1: false
     }
     this.selectAnswer = this.selectAnswer.bind(this)
@@ -24,7 +25,8 @@ export default class App extends React.Component {
     this.ansewer1Close = this.ansewer1Close.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
-
+    this.ClickClose = this.ClickClose.bind(this);
+    this.handleClickOpen = this.ClickOpen.bind(this);
   }
 
   displayNextQuestion = (nextQuestionId) => {
@@ -102,6 +104,15 @@ handleClickOpen = () => {
     this.setState({ open: false });
   };
 
+  // ハンバーガーメニューでの開閉
+  ClickOpen = () => {
+    this.setState({ open: true });
+  }
+
+  ClickClose = () => {
+    this.setState({ open: false });
+  }
+
   componentDidMount() {
     const initAnswer = "";
     this.selectAnswer(initAnswer, this.state.currentId);
@@ -133,7 +144,8 @@ handleClickOpen = () => {
           <div className="container">
           <Chats chats={this.state.chats}/>
           <AnswersList answers={this.state.answers} select={this.selectAnswer} />
-          <FormDialog open={this.state.open} handleClose={this.handleClose} />
+            {/* <FormDialog open={this.state.open} handleClose={this.handleClose} /> */}
+            <Menu1 open={this.state.open} handleClose={this.handleClose}/>
             {/* <Whiplash answer1={this.state.answer1} ansewer1Close={this.ansewer1Close}/> */}
           </div>
         </div>
