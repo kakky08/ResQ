@@ -15,8 +15,9 @@ const defaultDataset = {
         answers: [
             {content: "首の痛み", nextId: "neck"},
             {content: "頭痛", nextId: "headache"},
-            {content: "前に戻る", nextId: "init" },
-            {content: "フォームを開く", nextId: "answer"}
+            // {content: "前に戻る", nextId: "init" },
+            {content: "フォームを開く", nextId: "contact"},
+            {content: "結果を開く", nextId: "answer"}
         ],
         question: "首の痛み、頭痛どちらでお困りですか？",
     },

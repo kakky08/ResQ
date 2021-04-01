@@ -6,7 +6,6 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  height: 100;
 }
 
 .c-box {
@@ -16,9 +15,7 @@
   box-sizing: border-box;
   height: 592px;
   max-width: 432px;
-  padding: 0 1rem;
   width: 100%;
-
   /* Vertical and horizontal center alignment */
   position: absolute;
   top: 50%;
@@ -26,11 +23,16 @@
   transform: translate(-50%, -50%);
 }
 
+/* チャットボット意外の横幅 */
+.container {
+  padding: 0 1rem;
+}
+
 .c-grid__answer {
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  height: 192px;
+  height: 230px;
 }
 
 .p-chat__bubble {
@@ -75,29 +77,63 @@
 /* ==================
 Homeのcss
 ================== */
-
-/* ==================
-チャットボット、症状ページのヘッダーcss
-================== */
-.header {
+.home {
+  background-color: #6bb8ff;
 }
-
+.homeTitle {
+  text-align: center;
+  margin-top: 200px;
+  font-size: 7rem;
+  color: #fff;
+}
+.homeButton {
+  margin: 0 119px;
+  text-align: center;
+  background-color: #ffb549;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+}
 /* ==================
 症状ページのcss
 ================== */
+.over {
+  overflow: auto;
+  height: 440px;
+}
 
 .answerTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
 }
 
 .answerSymptomatology {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  line-height: 4rem;
 }
 
 .symptoms {
   font-weight: bold;
+  font-size: 3rem;
+  color: #333;
+}
+
+.symptoms-left {
+  padding-right: 15rem;
+}
+.symptoms-right {
+  padding-left: 20rem;
 }
 
 .symptomsList {
   list-style: none;
+  padding-left: 0;
 }
 
 .symptomsListItem {
@@ -106,21 +142,171 @@ Homeのcss
 .secondTitle {
   border: 1px solid #6bb8ff;
   border-radius: 8px;
-  font-size: 24rem;
+  font-size: 1.5rem;
   color: #333;
   text-align: center;
-  padding: 16rem 48rem;
-  margin-bottom: 32rem;
+  padding: 1rem 2rem;
+  margin: 3rem 2rem 3rem;
 }
 
 .symptomsText {
+  margin: 0 2rem;
+  color: #333;
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+}
+
+.symptomsTextSpan {
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+
+.symptomsTextEm {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.8rem;
 }
 
 .symptomsSubList {
+  list-style: inside;
+  padding-left: 2rem;
 }
 
 .symptomsSubListItem {
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
 }
 
 .searchButton {
+  padding: 0 1rem;
+  width: 100%;
+  height: 50px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #ffb549;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ==================
+チャットボット、症状ページのヘッダーcss
+================== */
+.header {
+  /*  position: relative; */
+  position: relative;
+  top: 0;
+  height: 100vh;
+  height: 60px;
+  background-color: #6bb8ff;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* ==================
+ハンバーガー
+================== */
+
+.c-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.p-hamburger {
+  position: absolute;
+  top: 6px;
+  bottom: 0;
+  left: 0;
+  right: 100px;
+  width: 48px;
+  height: 48px;
+  margin: 0 0 0 370px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 2rem transparent;
+  outline: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.p-hamburger:hover,
+.p-hamburger:focus {
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.5);
+}
+
+.p-hamburger__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  -webkit-transition: inherit;
+  transition: inherit;
+  text-align: center;
+}
+.hamburger__text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 11px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.to-top {
+  top: -2rem;
+}
+.to-bottom {
+  bottom: -2rem;
+}
+
+/* .p-hamburger__line::before, */
+/* .p-hamburger__line::after { */
+/* content: ""; */
+/* position: absolute; */
+/* display: block; */
+/* width: 100%; */
+/* height: 100%; */
+/* background-color: inherit; */
+/* -webkit-transition: inherit; */
+/* transition: inherit; */
+/* } */
+
+.p-hamburger__line::before {
+  top: -5px;
+}
+
+.p-hamburger__line::after {
+  top: 5px;
+}
+
+.u-visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 }

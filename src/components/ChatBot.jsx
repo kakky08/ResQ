@@ -118,10 +118,24 @@ handleClickOpen = () => {
     return (
       <section className="c-section">
         <div className="c-box">
+          <header className="header">
+          <button type="button" id="js-buttonHamburger" className={"c-button" + " " + "p-hamburger"} aria-controls="global-nav" aria-expanded="false">
+            <span className={"p-hamburger__line" + " " + "to-top"}></span>
+            <span className="hamburger__text">
+              Menu
+            <span className="u-visuallyHidden">
+          メニューを開閉する
+            </span>
+            </span>
+            <span className={"p-hamburger__line" + " " + "to-bottom"}></span>
+          </button>
+        </header>
+          <div className="container">
           <Chats chats={this.state.chats}/>
           <AnswersList answers={this.state.answers} select={this.selectAnswer} />
           <FormDialog open={this.state.open} handleClose={this.handleClose} />
-          {/* <Whiplash answer1={this.state.answer1} ansewer1Close={this.ansewer1Close}/> */}
+            {/* <Whiplash answer1={this.state.answer1} ansewer1Close={this.ansewer1Close}/> */}
+          </div>
         </div>
 
       </section>
