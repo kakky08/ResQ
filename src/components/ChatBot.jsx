@@ -1,15 +1,15 @@
 import React from 'react';
 import defaultDataset from "../dataset";
 import '../assets/styles/style.css';
-import { AnswersList,Chats } from "../components/index";
+import { AnswersList,Chats,Buger,Nav } from "../components/index";
 import { InsertInvitation } from '@material-ui/icons';
 import FormDialog from '../components/Forms/FormDialog';
-import Menu1 from './components/Menu1';
 import Whiplash from './Answer/Whiplash';
 import { useHistory } from "react-router-dom";
 
 
 export default class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,13 +20,15 @@ export default class App extends React.Component {
       open: true,
       answer1: false
     }
+
+
     this.selectAnswer = this.selectAnswer.bind(this)
     this.ansewer1ClickOpen = this.ansewer1ClickOpen.bind(this)
     this.ansewer1Close = this.ansewer1Close.bind(this)
     this.handleClickOpen = this.handleClickOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
-    this.ClickClose = this.ClickClose.bind(this);
-    this.handleClickOpen = this.ClickOpen.bind(this);
+    // ハンバーガーメニューのバインド
+    this.BugerClick = this.BugerClick.bind(this)
   }
 
   displayNextQuestion = (nextQuestionId) => {
@@ -103,14 +105,9 @@ handleClickOpen = () => {
   handleClose = () => {
     this.setState({ open: false });
   };
-
-  // ハンバーガーメニューでの開閉
-  ClickOpen = () => {
-    this.setState({ open: true });
-  }
-
-  ClickClose = () => {
-    this.setState({ open: false });
+//  ハンバーガーメニューの開閉
+  BugerClick = () => {
+    this.setState({ open: true })
   }
 
   componentDidMount() {
@@ -130,7 +127,9 @@ handleClickOpen = () => {
       <section className="c-section">
         <div className="c-box">
           <header className="header">
-          <button type="button" id="js-buttonHamburger" className={"c-button" + " " + "p-hamburger"} aria-controls="global-nav" aria-expanded="false">
+            <Buger open={this.state.open} />
+            <Nav open={this.state.open}/>
+          {/* <button type="button" id="js-buttonHamburger" className={"c-button" + " " + "p-hamburger"} aria-controls="global-nav" aria-expanded="false">
             <span className={"p-hamburger__line" + " " + "to-top"}></span>
             <span className="hamburger__text">
               Menu
@@ -139,13 +138,13 @@ handleClickOpen = () => {
             </span>
             </span>
             <span className={"p-hamburger__line" + " " + "to-bottom"}></span>
-          </button>
+          </button> */}
         </header>
           <div className="container">
           <Chats chats={this.state.chats}/>
           <AnswersList answers={this.state.answers} select={this.selectAnswer} />
             {/* <FormDialog open={this.state.open} handleClose={this.handleClose} /> */}
-            <Menu1 open={this.state.open} handleClose={this.handleClose}/>
+            {/* <Menu1 open={this.state.open} handleClose={this.handleClose}/> */}
             {/* <Whiplash answer1={this.state.answer1} ansewer1Close={this.ansewer1Close}/> */}
           </div>
         </div>

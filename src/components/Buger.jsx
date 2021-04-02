@@ -1,17 +1,22 @@
 import React from 'react';
 
-export default class Menu1 extends React.Component{
+
+export default class Buger extends React.Component{
   constructor(props) {
     super(props);
-
   }
-
-
 
   render(){
     return(
-      <div open={this.props.open} onClose={this.props.handleClose}>
-        <button click={this.props.ClickClose} type="button" id="js-buttonHamburger" className={"c-button" + " " + "p-hamburger"} aria-controls="global-nav" aria-expanded="false">
+      <div >
+        <button
+          onClick={this.props.BugerClick}
+          type="button"
+          className={"c-button" + " " + "p-hamburger"}
+          aria-controls="global-nav"
+         aria-expanded={this.props.BugerClick}
+        >
+
             <span className={"p-hamburger__line" + " " + "to-top"}></span>
             <span className="hamburger__text">
               Menu
