@@ -1,6 +1,7 @@
 import React, {useCallback,useState} from 'react';
 import TextInput from '../components/component/TextInput';
 import "../assets/styles/style.css";
+import PrimaryButton from '../components/component/PrimaryButton';
 
 const SignUpScreen = () => {
 
@@ -45,7 +46,15 @@ const SignUpScreen = () => {
         fullWidth={ true } label={"パスワード（再確認）"} multiline={false} required={true}
         rows={1} value={confirmPassword} type={"password"} onChange={inputConfirmPassword}
       />
+      <div className="module-spacer--medium" />
+      <div className="center">
+        <PrimaryButton
+          label={"アカウントを登録する"}
+          onClick={() => console.log("Clicked!")}
+        />
+      </div>
     </div>
+
   )
 }
 export default SignUpScreen;
