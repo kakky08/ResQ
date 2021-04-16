@@ -79,6 +79,9 @@ Homeのcss
 ================== */
 .home {
   background-color: #6bb8ff;
+  background-image: url(../img/book1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .homeTitle {
   text-align: center;
@@ -328,4 +331,52 @@ nav [area-expanded="true"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+LogContainer {
+  background-color: #f0f4f8;
+}
+
+LogInner {
+  padding: 27px 24px;
+}
+
+LogTitle {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+LogInput {
+  font-size: 16px;
+  height: 48px;
+  border: solid 1px #ddd;
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+
+LogFotterText {
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 8px;
+}
+
+LogFotterLink {
+  font-size: 14px;
+  line-height: 24px;
+  color: #467fd3;
+}
+
+LogBottonContainer {
+  background-color: #467fd3;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+LogBottonLabel {
+  font-size: 16px;
+  line-height: 32px;
+  padding: 8px 32px;
+  color: #fff;
 }

@@ -1,12 +1,19 @@
-import { BrowserRouter } from "react-router-dom";
-import { Router }from "./router/Router";
-//import {  } from "./ChatBot";
-import "./assets/styles/style.css";
+import React, {useState, useCallback, useEffect} from 'react';
+import './assets/styles/style.css'
+import {db} from './firebase/index'
+import ChatBotScreen from './screen/ChatBotScreen'
+// import HomeScreen from './screen/HomeScreen'
+// import {FormDialog} from "./components/Forms/index";
+// import LogInScreen from './screen/LogInScreen';
+import SignUp from './screen/SignUp';
+// import LogRoot from "./components/component/LogRoot";
 
-export default function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <Router/>
-    </BrowserRouter>
-  );
+    <SignUp />
+     /*    <HomeScreen /> */
+       /*  <ChatBotScreen /> */
+    )
 }
+
+export default App;

@@ -15,9 +15,7 @@ const defaultDataset = {
         answers: [
             {content: "首の痛み", nextId: "neck"},
             {content: "頭痛", nextId: "headache"},
-            // {content: "前に戻る", nextId: "init" },
-            {content: "フォームを開く", nextId: "contact"},
-            {content: "結果を開く", nextId: "answer"}
+            {content: "前に戻る", nextId: "init" },
         ],
         question: "首の痛み、頭痛どちらでお困りですか？",
     },
@@ -106,11 +104,19 @@ const defaultDataset = {
     },
     "neck_10": {
         answers: [
-            {content: "はい", nextId: "neck_00"},// ムチウチ
+            {content: "はい", nextId: "mutiuti"},// ムチウチ
             { content: "いいえ", nextId: "neck_00" },//検査してください
             { content: "前に戻る", nextId: "neck_08" },
         ],
         question: "上や下や横を向いたり首をかしげたりすると痛みますか？",
+    },
+    "mutiuti": {
+        answers: [
+            {content: "結果を確認する", nextId: "answer"},
+            { content: "前の質問に戻る", nextId: "neck_10" },
+            {content: "最初からやり直す", nextId: "init"}
+        ],
+        question: "診察結果が出ました。",
     },
 
     "headache": {
